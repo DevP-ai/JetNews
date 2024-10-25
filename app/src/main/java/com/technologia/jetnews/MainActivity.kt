@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.technologia.jetnews.presentation.onboarding.OnBoardingScreen
 import com.technologia.jetnews.ui.theme.JetNewsTheme
 import kotlinx.coroutines.delay
 
@@ -44,12 +46,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             val systemUiController = rememberSystemUiController()
 
-            systemUiController.setStatusBarColor(
-                color = Color.Blue,
-                darkIcons = true
-            )
+//            systemUiController.setStatusBarColor(
+//                color = Color.Blue,
+//                darkIcons = true
+//            )
             JetNewsTheme {
-
+                Box(modifier = Modifier.background(color = MaterialTheme.colorScheme.background)){
+                    OnBoardingScreen()
+                }
             }
         }
     }
